@@ -60,25 +60,28 @@
     h1 { margin: 10px 0 8px; font-size: 28px; }
     p { margin: 0 0 12px; color: #475569; }
 
-    /* ✅ Imagen producto (hero) */
-    .product-media {
-      margin: 12px 0 14px;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-    }
-    .product-media img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    .product-caption {
-      padding: 10px 12px;
-      font-size: 13px;
-      color: #64748b;
-      border-top: 1px solid #e2e8f0;
-    }
+    /* Imagen a la izquierda + texto a la derecha */
+	.product-media{
+	  display: flex;
+	  align-items: center;   /* centrado vertical */
+	  gap: 25px;             /* separación entre imagen y texto */
+	  flex-wrap: wrap;       /* en móvil baja el texto debajo si no cabe */
+	}
+	
+	.product-media img{
+	  width: 250px;          /* ✅ tamaño pedido */
+	  height: auto;
+	  flex: 0 0 auto;        /* evita que se estire */
+	  display: block;
+	}
+
+	.product-caption{
+	  flex: 1 1 220px;       /* el texto ocupa el resto del ancho */
+	  color: #64748b;
+	  font-size: 14px;
+	  line-height: 1.35;
+	}
+
 
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .card {
@@ -128,7 +131,7 @@
 
       <!-- ✅ Logo + Marca (estructura original conservada, solo envuelta) -->
       <div class="brand-wrap">
-        logo_H20_SELLA.png
+        <img src="logo_H20_SELLA.png">
         <div class="brand">
           <b>H2O SELLA</b>
           <small>Ósmosis · Descalcificación · Mantenimiento</small>
@@ -145,10 +148,21 @@
       <h1>RUWA FLOW 600 — Ósmosis inversa de flujo directo</h1>
 
       <!-- ✅ Foto del producto añadida sin alterar la estructura de secciones -->
-      <div class="product-media">
-        Ruwa-600-maquina-osmosis-Hidroindal.jpg
-        <div class="product-caption">RUWA FLOW 600 · Flujo directo</div>
-      </div>
+      
+	
+<div class="product-media">
+  <img src="Ruwa-600-maquina-osmosis-Hidroindal.jpg" 
+
+	alt=<section class="grid">
+      <div class="card offer">
+        <div class="badge">25% descuento*</div>
+        <div class="price">1.650 €</div>
+        <div class="old">Antes 2.200 €</div>
+        <p style="margin-top:10px">*Promoción válida hasta final de mes.</p>
+        <p><b>Dimensiones:</b> 335 × 132 × 410 mm (alto × ancho × fondo)<br/>
+           <b>Peso:</b> 12,5 kg</p>
+	</div>
+
 
       <p>Instalación, puesta en marcha y mantenimiento. Contacto directo por llamada o email.</p>
 
@@ -160,16 +174,7 @@
       </div>
     </section>
 
-    <section class="grid">
-      <div class="card offer">
-        <div class="badge">25% descuento*</div>
-        <div class="price">1.650 €</div>
-        <div class="old">Antes 2.200 €</div>
-        <p style="margin-top:10px">*Promoción válida hasta final de mes.</p>
-        <p><b>Dimensiones:</b> 335 × 132 × 410 mm (alto × ancho × fondo)<br/>
-           <b>Peso:</b> 12,5 kg</p>
-      </div>
-
+    
       <div class="card">
         <b>Características clave</b>
         <ul>
